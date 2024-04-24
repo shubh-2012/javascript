@@ -120,3 +120,22 @@ function main() {
 
 // end of return function from a function
 
+// reduce function
+
+// reduce(redFn,initila value)
+
+// function redFn(accumulator,curretValue, currentindex,arr)
+
+// works like map function but it accumulates the data rather than returning a new array with modified results
+
+const inputs = [1,2,4,5,8];
+
+const sum5 = inputs.reduce((total,num)=>{
+  return total + num;
+},0);
+
+console.log(sum5);
+
+
+
+
