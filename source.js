@@ -128,13 +128,44 @@ function main() {
 
 // works like map function but it accumulates the data rather than returning a new array with modified results
 
-const inputs = [1,2,4,5,8];
+// const inputs = [1,2,4,5,8];
 
-const sum5 = inputs.reduce((total,num)=>{
-  return total + num;
-},0);
+// const sum5 = inputs.reduce((total,num)=>{
+//   return total + num;
+// },0);
 
-console.log(sum5);
+// console.log(sum5);
+
+
+const contacts = [
+  { name: "Alice", company: "ABC Inc." },
+  { name: "Bob", company: "XYZ Corp." },
+  { name: "Charlie", company: "ABC Inc." }
+];
+function mapContactsToCompanies(contacts) {
+//Implement your function and return the object
+    
+    const result11 = contacts.reduce((val,current)=>{
+         const tempval = current.company;
+        if (current.company in val){
+            val[tempval].push(current.name);
+        } else{
+            console.log(current.company);
+            
+            val[tempval] = [current.name] ;
+        }
+        return val;
+        
+        
+    },{});
+    
+    return result11;
+}
+
+  let result123 = mapContactsToCompanies(contacts);
+  console.log(result123);
+
+// end reduce
 
 
 
