@@ -182,6 +182,92 @@ const neg = temparr.filter((num)=>num<0);
 console.log(positive);
 console.log(neg);
 
+/** The function should work as follows:
+- Takes the all songs array and the filter object "filters" as arguments.
+- Applies a filter to limit the songs to the given genre only.
+- Then, apply a filter to limit the songs to the given duration and returns the filtered results. */
+
+  const songs = [
+    { title: "All of Me", 
+      artist: "John Legend", 
+      genre: "Pop", 
+      duration: 248 },
+    { title: "Despacito", 
+      artist: "Luis Fonsi", 
+      genre: "Pop", 
+      duration: 279 },
+    { title: "Someone Like You", 
+      artist: "Adele", 
+      genre: "Pop", 
+      duration: 285 },
+    {
+      title: "Thriller",
+      artist: "Michael Jackson",
+      genre: "Pop",
+      duration: 357
+    },
+    {
+      title: "Bohemian Rhapsody",
+      artist: "Queen",
+      genre: "Rock",
+      duration: 354
+    },
+    {
+      title: "Stairway to Heaven",
+      artist: "Led Zeppelin",
+      genre: "Rock",
+      duration: 480
+    },
+    {
+      title: "Sweet Child O' Mine",
+      artist: "Guns N' Roses",
+      genre: "Rock",
+      duration: 355
+    },
+    {
+      title: "Smells Like Teen Spirit",
+      artist: "Nirvana",
+      genre: "Rock",
+      duration: 302
+    },
+    {
+      title: "Hotel California",
+      artist: "Eagles",
+      genre: "Rock",
+      duration: 390
+    },
+    {
+      title: "Thrash Unreal",
+      artist: "Against Me!",
+      genre: "Punk",
+      duration: 292
+    },
+    {
+      title: "London Calling",
+      artist: "The Clash",
+      genre: "Punk",
+      duration: 189
+    }
+  ];
+  const filters = { genre: "Rock", duration: 350 };
+
+  function filterSongs(songs,filters){
+    //Implement your function here
+    const filterSong = songs.filter((currentSong)=>{
+        return currentSong.genre === filters.genre && currentSong.duration > filters.duration;
+    });
+
+    return filterSong;
+
+    // const finalsong = filtersong.filter((currentsong1)=>{
+    //   if(currentsong1.duration)
+    // })
+  }
+
+  const outputsong = filterSongs(songs,filters);
+
+  console.log(outputsong);
+
 
 // end filter function
 
