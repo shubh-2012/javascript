@@ -169,4 +169,22 @@ function mapContactsToCompanies(contacts) {
 
 
 
+// filter function
+
+const temparr = [1,-3,5,-1,0];
+
+const positive = temparr.filter((currentval)=>{
+  return currentval > 0 ;
+})
+
+const neg = temparr.filter((num)=>num<0);
+
+console.log(positive);
+console.log(neg);
+
+
+// end filter function
+
+
+
 
