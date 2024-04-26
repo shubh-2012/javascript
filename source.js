@@ -118,6 +118,43 @@ function main() {
   main();
 
 
+  // map function
+    // 
+    const employees = [
+      { id: 1, name: "Alice", department: "sales", salary: 40000 },
+      { id: 2, name: "Bob", department: "engineering", salary: 50000 },
+      { id: 3, name: "Charlie", department: "marketing", salary: 45000 },
+      { id: 4, name: "David", department: "sales", salary: 35000 },
+      { id: 5, name: "Emily", department: "engineering", salary: 55000 }
+    ];
+    function increaseSalaries(employees){
+    //Implement your function here to modify the salaray.
+      
+      const result = employees.map((current)=>{
+        if (current.department === 'sales'){
+            current.salary = (current.salary * 1.1).toFixed(1);
+          }else if(current.department === 'engineering'){
+            current.salary = (current.salary * 1.15).toFixed(1);
+          }else{
+            current.salary = (current.salary * 1.05).toFixed(1);
+          }
+        return current;
+      });
+      
+      return result;
+      
+      
+    }
+
+    const ans = increaseSalaries(employees);
+    console.log(ans);
+
+// 
+
+
+  // end map function
+
+
 // end of return function from a function
 
 // reduce function
@@ -391,7 +428,5 @@ console.log(neg);
   console.log(temparary);
 
 // end find total after applying discount
-
-
 
 
