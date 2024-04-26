@@ -327,4 +327,71 @@ console.log(neg);
 
 
 
+// find total after applying discount
+
+  const orders = [
+    {
+      orderNumber: 1,
+      items: [
+        { name: "Cappuccino", price: 3.5 },
+        { name: "Chocolate Croissant", price: 2.5 }
+      ]
+    },
+    {
+      orderNumber: 2,
+      items: [
+        { name: "Latte", price: 4.0 },
+        { name: "Blueberry Muffin", price: 2.75 }
+      ],
+      discountCode: "COFFEELOVER"
+    }
+  ];
+
+  function totalOrderValue(orders, applyDiscount){
+    //Implement your function here
+    //The function should return the total price after applying the discount.
+
+      const totalarr = orders.map(applyDiscount);
+
+      console.log(totalarr);
+
+      const answertotal = totalarr.reduce((tempans,currentans)=>{
+          tempans += currentans;
+          return tempans;
+      },0);
+
+      return answertotal;
+      
+  }
+
+  function applyDiscount(currentObj){
+      const temparr13 = currentObj.items;
+
+      const temptotal = temparr13.reduce((acctemp,currenttemp)=>{
+          acctemp += currenttemp.price;
+          return acctemp;
+      },0);
+
+      const discountCode = currentObj.hasOwnProperty('discountCode');
+      console.log(discountCode);
+      let discountValue = 1;
+
+      if (discountCode){
+        if(currentObj.discountCode === 'COFFEELOVER'){
+          discountValue = 0.9;
+        } else if(currentObj.discountCode === 'TEALOVER'){
+            discountValue = 0.8;
+        }
+      }
+
+      return Number((temptotal * discountValue).toFixed(2)) ;
+  }
+
+  const temparary = totalOrderValue(orders, applyDiscount);
+  console.log(temparary);
+
+// end find total after applying discount
+
+
+
 
