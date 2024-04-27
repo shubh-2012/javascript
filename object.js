@@ -32,5 +32,25 @@ const userProfile = {
   
   console.log(getUserDetail(userProfile2, ["address", "block"]));
 
-  
+//   creating similiar objects like this is not optimised, better to this with function like constructor function.
 // end of creating objects and retrieving values from them. 
+
+
+
+// constructor function
+
+  function Movie (title,year){      /* Constructor function name starts with Capital letter*/
+    this.title = title;
+    this.year = year;
+
+    this.getDetail = function(){
+        console.log( `Title : ${this.title} , Year : ${this.year}`);
+    };
+  }
+
+  const movie123 = new Movie('Hello','1234');
+  
+  movie123.getDetail();
+
+
+// end constructor function
