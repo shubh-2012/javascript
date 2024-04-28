@@ -54,3 +54,79 @@ const userProfile = {
 
 
 // end constructor function
+
+
+
+// prototype
+
+// add the method to the prototype chain instead of creating copies.
+// Ensure that isClassic method is accessible to all instances of Book object.
+
+
+function Book(title, author, publicationYear) {
+    this.title = title;
+    this.author = author;
+    this.publicationYear = publicationYear;
+  
+      Book.prototype.isClassic = function () {
+        this.currentYear = 2023;
+        this.age = this.currentYear - this.publicationYear;
+        if (this.age >= 50) {
+          return "The book is from the classic collection";
+        }
+        return "The book is not a classic collection book";
+      };
+  }
+  
+  
+  // Create a few book objects
+  const book1 = new Book("To Kill a Mockingbird", "Harper Lee", 1990);
+  const book2 = new Book("1984", "George Orwell", 1949);
+  const book3 = new Book("The Great Gatsby", "F. Scott Fitzgerald", 1925);
+  
+  
+  // Consoling output
+  console.log(book1.isClassic()); // Output: 63
+  console.log(book3.isClassic()); // Output: 98
+  
+
+
+// end prototype
+
+
+
+
+
+// bind 
+
+/**modify the login method by using the bind method to create a 
+ * reusable function named loginFunction that is bound to the systemCredentials object. */
+
+
+  function User(displayName) {
+    this.displayName = displayName;
+  }
+  
+  const systemCredentials = {
+    username: "system",
+    password: "pass123"
+  };
+  User.prototype.login = function (username, password) {
+      // Implement the code here
+      if (this.username === username && this.password === password){
+          console.log('Login successful!');
+      }else{
+          console.log('Login failed!');
+      }
+    };
+    
+    // Example usage:
+    const user = new User("John Doe");
+    // Create the reusable loginFunction here
+  
+    let loginFunction = user.login.bind(systemCredentials);
+    
+    loginFunction("system", "pass123"); // Expected output: "Login successful!"
+    loginFunction("wrongUsername", "wrongPassword"); // Expected output: "Login failed!"
+
+// end bind
