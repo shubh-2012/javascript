@@ -355,6 +355,7 @@
   .successModal .modalBottom button:hover {
     background-color: rgba(84, 216, 84, 0.808);
   }
+  
   /* Desktop */
   
   @media (min-width: 800px) {
