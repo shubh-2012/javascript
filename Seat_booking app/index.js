@@ -54,8 +54,21 @@ const moviesList = [
 
 //   end of : add movies from available list to select your movie dropdown
 
-// get total price
+// start of: book seat and show notification, change seat status to occupied.
 
-    
+    processBtn = document.getElementById('proceedBtn');
 
-// end of : get total price
+    processBtn.addEventListener('click',()=>{
+      const seatSelectedTemp = document.getElementsByClassName('seat selected');
+      console.log(seatSelectedTemp);
+      for(let i=0 ; i<seatSelectedTemp.length;i++){
+        console.log(seatSelectedTemp[i].classList);
+        seatSelectedTemp[i].classList.remove('selected');
+        console.log(seatSelectedTemp[i].classList);
+        seatSelectedTemp[i].classList.add('occupied');
+        console.log(seatSelectedTemp[i].classList);
+      }
+      alert('your Booking is successful');
+    });
+
+// end of : book seat and show notification, change seat status to occupied.
