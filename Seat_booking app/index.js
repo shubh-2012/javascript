@@ -6,8 +6,7 @@ const moviesList = [
 
 //  start of :  add event listener to all seats to toggle colour when selected/unselected.
 // get the total count of selected seats
-  const vacantSeat = document.getElementsByClassName('seat');
-
+  const vacantSeat = Array.from(document.getElementsByClassName('seat'));
   for (let i = 0; i<vacantSeat.length; i++){
     vacantSeat[i].addEventListener('click',(event)=>{
       const arraySeatClass = vacantSeat[i].classList.contains('occupied');
@@ -59,14 +58,11 @@ const moviesList = [
     processBtn = document.getElementById('proceedBtn');
 
     processBtn.addEventListener('click',()=>{
-      const seatSelectedTemp = document.getElementsByClassName('seat selected');
+      const seatSelectedTemp = Array.from(document.getElementsByClassName('seat selected'));
       console.log(seatSelectedTemp);
-      for(let i=0 ; i<seatSelectedTemp.length;i++){
-        console.log(seatSelectedTemp[i].classList);
+      for(let i=1 ; i<seatSelectedTemp.length;i++){    /**leaving first element as legend class has seat selected class */
         seatSelectedTemp[i].classList.remove('selected');
-        console.log(seatSelectedTemp[i].classList);
         seatSelectedTemp[i].classList.add('occupied');
-        console.log(seatSelectedTemp[i].classList);
       }
       alert('your Booking is successful');
     });
