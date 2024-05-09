@@ -14,5 +14,23 @@ const questionObj =
     const optionEl = document.getElementById("options");
     const scoreEl = document.getElementById("score");
 
-    questionEl.textContent = question; 
+    questionEl.textContent = question;
+    let score = 0;
+
+    options.forEach((option)=>{
+        const newButton = document.createElement("button");
+        newButton.textContent = option;
+        optionEl.appendChild(newButton);
+        newButton.addEventListener('click',()=>{
+          if(newButton.textContent === correctAnswer){
+            score++;
+          }else{
+            score = score - 0.25
+          }
+          scoreEl.textContent =  `score:${score}`;
+          questionEl.textContent = 'Quiz Completed';
+          optionEl.textContent = '';
+        });
+    });
+
 
